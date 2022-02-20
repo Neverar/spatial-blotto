@@ -27,7 +27,7 @@ Premier jour:
 | a1 | a2, a3 | | a4, a5 | a6, a7 |
 | b1 | b2 | b3,b4, b5| b6 | b7 |
 
-A l'issue du premier jour, on voit que $e_1$ n'est remporté par aucun parti qui ont mobilisé chacun 1 militant, que $e_2$ est remporté par le parti A (2 vs. 1), $e_3$ par B (0 vs. 3), $e_4$ par A (2 vs. 1) et enfin $e_5$ par A (2 vs. 1).
+A l'issue du premier jour, on voit que e1 n'est remporté par aucun parti qui ont mobilisé chacun 1 militant, que e2 est remporté par le parti A (2 vs. 1), e3 par B (0 vs. 3), e4 par A (2 vs. 1) et enfin e5 par A (2 vs. 1).
 Le parti A a donc remporté 3 électeurs au cours de cette journée, contre 1 pour le parti B.  
 
 Deuxième jour:
@@ -37,8 +37,8 @@ Deuxième jour:
 | a1 | a2,a3 | | a4,a5 | a6, a7 |
 | b1, b5 | b2, b3, b4 |  |  | b6, b7 |
 
-La journée suivante, le parti A reste sur sa même stratégie, tandis que le parti B s'adapte. Cette fois, le parti A ne remporte qu'un électeur contre 3 au joueur B.
-Après ces deux journées, les partis sont donc à égalité avec 4 électeurs convaincus de chaque côté.  
+La journée suivante, le parti A reste sur sa même stratégie, tandis que le parti B s'adapte. Cette fois, le parti A ne remporte qu'un électeur contre 2 au joueur B.
+Si la campagne s'arrêtait après ces deux journées seulement, le parti remporterait 4 voix, contre 3 pour le parti B.   
 
 
 
@@ -62,7 +62,7 @@ Les joueurs, ramassables, et obstacles sont des objets Python sur lesquels vous 
 Par exemple, récupérer leurs coordonnées sur la carte avec `o.get_rowcol(x,y)` ou à l'inverse fixer leurs coordonnées avec `o.set_rowcol(x,y)`.
 
 
-Notez que vous pourrez ensuite éditer vos propres cartes à l'aide de l'éditeur (Tiled)[https://www.mapeditor.org/], et exporter ces cartes au format `.json`. Vous pourrez alors modifier le nombre de secteurs ou de militants comme vous le souhaitez.
+Notez que vous pourrez ensuite éditer vos propres cartes à l'aide de l'éditeur [Tiled](https://www.mapeditor.org/), et exporter ces cartes au format `.json`. Vous pourrez alors modifier le nombre de secteurs ou de militants comme vous le souhaitez.
 
 **Note**: on fait ici l'hypothèse que toutes les informations (positions des joueurs) sont disponibles pour tous les agents.
 
@@ -72,8 +72,11 @@ Notez que vous pourrez ensuite éditer vos propres cartes à l'aide de l'éditeu
 
 Un fichier de prise en main `main.py` vous est fourni. Il illustre comment deux militants peuvent se déplacer cers deux votants. Le premier trouve son chemin avec l'algorithme A*, le deuxième effectue une marche aléatoire.
 
-* semaine 1: prise en main de l'environnement, permettre à **tous** les militants de choisir un secteur au hasard et de se déplacer vers ce secteur en utilisant A* (en suivant le modèle du premier joueur). Lorsque tous les militants ont atteint leur objectif, afficher le score de cette journée, c'est-à-dire le nombre de secteurs remportés par chaque parti
-* semaine 2: jeu sans budget de déplacement: le jeu se déroule à présent sur un nombre donné de jours de campagne. Le jour suivant de campagne, les joueurs partent de l'endroit où ils sont arrivés le jour précédent. On suppose pour le moment que les votants restent sur les mêmes secteurs.
+### semaine 1:
+prise en main de l'environnement, permettre à **tous** les militants de choisir un secteur au hasard et de se déplacer vers ce secteur en utilisant A* (en suivant le modèle du premier joueur). Lorsque tous les militants ont atteint leur objectif, afficher le score de cette journée, c'est-à-dire le nombre de secteurs remportés par chaque parti
+
+### semaine 2:
+jeu sans budget de déplacement: le jeu se déroule à présent sur un nombre donné de jours de campagne. Le jour suivant de campagne, les joueurs partent de l'endroit où ils sont arrivés le jour précédent. On suppose pour le moment que les votants restent sur les mêmes secteurs.
 Elaborer de premières stratégies, en particulier:
 1. joueur **aléatoire**: choisit les secteurs où allouer ses militants au hasard
 2. joueur **stochastique expert**: choisit de manière probabiliste parmi $k$ stratégies identifiées comme pertinentes
@@ -81,12 +84,16 @@ Elaborer de premières stratégies, en particulier:
 4. joueur **meilleure réponse**: joue une meilleure réponse à la stratégie précédente de l'autre parti
 5. joueur **fictitious play**: joue en meilleure réponse pour l'utilité espérée selon la fréquence observée des stratégies observées de l'autre parti
 6. autres stratégies...
-* semaine 3: jeu avec budget de déplacement: on suppose à présent que les militants sont contraints par un budget de temps qui limite les secteurs qu'ils peuvent atteindre dans la journée. De plus, les votants sont réalloués au hasard dans de nouveaux secteurs chaque jour.
+
+### semaine 3:
+jeu avec budget de déplacement: on suppose à présent que les militants sont contraints par un budget de temps qui limite les secteurs qu'ils peuvent atteindre dans la journée. De plus, les votants sont réalloués au hasard dans de nouveaux secteurs chaque jour.
 Dans la première variante, on suppose que le budget est fixe pour chaque journée (par ex. 12 pas de déplacement pour chaque militant de chaque parti). Dans la seconde variante, on suppose que que le budget concerne la campagne entière: chaque jour le parti paye comme prix la somme des trajets réalisés par ses militants dans la journée.
-* semaine 4: soutenances: vous décrirez les stratégies proposées et les résultats de tests en confrontation que vous aurez pu réaliser. Par exemple, stochastique expert contre fictitious play, etc.
-Votre rapport devra être rédigé en Markdown et déposé dans le répertoire `docs` (voir le template `rapport.md`) 
+
+### semaine 4:
+soutenances: vous décrirez les stratégies proposées et les résultats de tests en confrontation que vous aurez pu réaliser. Par exemple, stochastique expert contre fictitious play, etc.
+Votre rapport devra être rédigé en Markdown et déposé dans le répertoire `docs` (voir le template `rapport.md`)
 
 
 ## Bibliographie
 
-* article (Colonel Blotto)[https://en.wikipedia.org/wiki/Blotto_game] sur Wikipedia
+* article [Colonel Blotto](https://en.wikipedia.org/wiki/Blotto_game) sur Wikipedia
