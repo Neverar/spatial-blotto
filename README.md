@@ -4,15 +4,15 @@ Spatial version of the Colonel Blotto game. Undergrad project (L3) at Sorbonne U
 ## Présentation générale du projet
 
 On se propose d'étudier une variante spatialisée du problème du Colonel Blotto vu en TD.
-Deux partis à une élection s'affrontent. On suppose qu'ils disposent du même nombre total de militantes et militants.  
+Deux partis à une élection s'affrontent. On suppose qu'ils disposent du même nombre total de **militants**.  
 Chaque parti doit décider d'allouer ses équipes de campagnes pour convaincre différents **électeurs**.
 On suppose que le vote d'une électrice ou d'un électeur est remporté par le parti qui a alloué le plus de militants pour la ou le convaincre.
 
 La variante que vous allez étudier est **itérée** et **spatialisée**:
-* on suppose qu'une **campagne** se déroule sur plusieurs jours. Chaque jour, les équipes de militants se focalisent sur le même ensemble d'électeurs qui sont localisés dans des secteurs de la ville (par ex. des quartiers). Le jour d'après, les deux partis s'affrontent sur un autre ensemble d'électeurs qui ppeuvent être dans les mêmes secteurs ou pas, etc.
-* on supposera dans un deuxième temps que les militants se déplacent de secteurs en secteurs et que ces déplacements ont un coût.
+* on suppose qu'une **campagne** se déroule sur plusieurs **jours**. Chaque jour, les équipes de militants se focalisent sur le même ensemble d'électeurs qui sont localisés dans des secteurs de la ville (par ex. des quartiers). Le jour d'après, les deux partis s'affrontent sur un autre ensemble d'électeurs qui peuvent être dans les mêmes secteurs ou pas, etc.
+* on supposera dans un deuxième temps que les militants se déplacent de secteurs en secteurs et que ces déplacements ont un coût qui devra être pris en compte dans la stratégie.
 
-Il est important de noter que les partis effectuent leur choix d'allocation après avoir pris connaissance de l'endroit où se situe les électrices et électeurs chaque jour.
+Il est important de noter que les partis effectuent leur choix d'allocation après avoir pris connaissance de l'endroit où se situent les électrices et électeurs, chaque jour. Pour chaque parti, l'espace des stratégies est donc l'ensemble des allocations possible des militants
 
 Le parti qui a convaincu le plus d'électrices et électeurs à la fin de la campagne remporte l'élection.
 
@@ -22,20 +22,20 @@ Supposons que les deux partis A et B disposent de $m=7$ militants, à répartir 
 
 Premier jour:
 
-| e_1 | e_2 | e_3 | e_4 | e_5 |
+| e1 | e2 | e3 | e4 | e5 |
 |---|---|---|---|---|
-| a_1 | a_2,a_3 | | a_4,a_5 | a_6,a_7 |
-| b_1 | b_2 | b_3,b_4, b_5| b_6 | b_7 |
+| a1 | a2, a3 | | a4, a5 | a6, a7 |
+| b1 | b2 | b3,b4, b5| b6 | b7 |
 
 A l'issue du premier jour, on voit que $e_1$ n'est remporté par aucun parti qui ont mobilisé chacun 1 militant, que $e_2$ est remporté par le parti A (2 vs. 1), $e_3$ par B (0 vs. 3), $e_4$ par A (2 vs. 1) et enfin $e_5$ par A (2 vs. 1).
 Le parti A a donc remporté 3 électeurs au cours de cette journée, contre 1 pour le parti B.  
 
 Deuxième jour:
 
-| s_1 | s_2 | s_3 | s_4 | s_5 |
+| e1 | e2 | e3 | e4 | e5 |
 |---|---|---|---|---|
-| a_1 | a_2,a_3 | | a_4,a_5 | a_6,a_7 |
-| b_1, b_5 | b_2, b_3,b_4 |  |  | b_6, b_7 |
+| a1 | a2,a3 | | a4,a5 | a6, a7 |
+| b1, b5 | b2, b3, b4 |  |  | b6, b7 |
 
 La journée suivante, le parti A reste sur sa même stratégie, tandis que le parti B s'adapte. Cette fois, le parti A ne remporte qu'un électeur contre 3 au joueur B.
 Après ces deux journées, les partis sont donc à égalité avec 4 électeurs convaincus de chaque côté.  
@@ -83,6 +83,10 @@ Elaborer de premières stratégies, en particulier:
 6. autres stratégies...
 * semaine 3: jeu avec budget de déplacement: on suppose à présent que les militants sont contraints par un budget de temps qui limite les secteurs qu'ils peuvent atteindre dans la journée. De plus, les votants sont réalloués au hasard dans de nouveaux secteurs chaque jour.
 Dans la première variante, on suppose que le budget est fixe pour chaque journée (par ex. 12 pas de déplacement pour chaque militant de chaque parti). Dans la seconde variante, on suppose que que le budget concerne la campagne entière: chaque jour le parti paye comme prix la somme des trajets réalisés par ses militants dans la journée.
-* semaine 4: soutenances
+* semaine 4: soutenances: vous décrirez les stratégies proposées et les résultats de tests en confrontation que vous aurez pu réaliser. Par exemple, stochastique expert contre fictitious play, etc.
+Votre rapport devra être rédigé en Markdown et déposé dans le répertoire `docs` (voir le template `rapport.md`) 
+
 
 ## Bibliographie
+
+* article (Colonel Blotto)[https://en.wikipedia.org/wiki/Blotto_game] sur Wikipedia
