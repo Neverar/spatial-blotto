@@ -43,7 +43,7 @@ class SpriteBuilder(object):
         # print (self.carte["tilesets"][0]["image"])
 
         try:
-            sheet_filename  = dirname + "/" + self.carte["tilesets"][0]["image"]
+            sheet_filename  = dirname + "/" + self.carte["tilesets"][0]["image"][2:]
             self.sheet      = SpriteSheet(sheet_filename,self.spritesize)
         except pygame.error:
             try:
