@@ -3,7 +3,7 @@ Spatial version of the Colonel Blotto game. Undergrad project (L3) at Sorbonne U
 
 ## Présentation générale du projet
 
-On se propose d'étudier une variante du problème du Colonel Blotto vu en TD.
+On se propose d'étudier une variante du problème du Colonel Blotto qui sera vu en TD en semaine 2.
 Deux partis à une élection s'affrontent. On suppose qu'ils disposent du même nombre total de **militants**.  
 Chaque parti doit décider d'allouer ses équipes de campagnes pour convaincre différents **électeurs**.
 On suppose que le vote d'une électrice ou d'un électeur est remporté par le parti qui a alloué le plus de militants pour la ou le convaincre.
@@ -59,7 +59,7 @@ Les cartes utilisent au moins trois calques:
 * un calque `obstacles`, pour les murs, qui sont infrnachissables par les personnages et contraignent les déplacements.
 
 Les joueurs, ramassables, et obstacles sont des objets Python sur lesquels vous pouvez effectuer des opérations classiques.
-Par exemple, récupérer leurs coordonnées sur la carte avec `o.get_rowcol(x,y)` ou à l'inverse fixer leurs coordonnées avec `o.set_rowcol(x,y)`.
+Par exemple, il est possible récupérer leurs coordonnées sur la carte avec `o.get_rowcol(x,y)` ou à l'inverse fixer leurs coordonnées avec `o.set_rowcol(x,y)`.
 
 
 Notez que vous pourrez ensuite éditer vos propres cartes à l'aide de l'éditeur [Tiled](https://www.mapeditor.org/), et exporter ces cartes au format `.json`. Vous pourrez alors modifier le nombre de secteurs ou de militants comme vous le souhaitez.
@@ -73,16 +73,16 @@ Notez que vous pourrez ensuite éditer vos propres cartes à l'aide de l'éditeu
 Un fichier de prise en main `main.py` vous est fourni. Il illustre comment deux militants peuvent se déplacer vers une électrice et un électeur choisis au hasard. Le premier trouve son chemin avec l'algorithme A*, le deuxième effectue une marche aléatoire.
 
 ### semaine 1:
-Prise en main de l'environnement, permettre à **tous** les militants de choisir un électeur au hasard et de se déplacer vers celui-ci en utilisant A* (en suivant le modèle du premier joueur). Lorsque tous les militants ont atteint leur objectif, afficher le score de cette journée, c'est-à-dire le nombre de voix remportés par chaque parti. 
+Prise en main de l'environnement, permettre à **tous** les militants de choisir un électeur au hasard et de se déplacer vers celui-ci en utilisant A* (en suivant le modèle du premier joueur). Lorsque tous les militants ont atteint leur objectif, afficher le score de cette journée, c'est-à-dire le nombre de voix remportés par chaque parti.
 
 ### semaine 2:
 Jeu sans budget de déplacement: le jeu se déroule à présent sur un nombre donné de jours de campagne. Le jour suivant de campagne, les joueurs partent de l'endroit où ils sont arrivés le jour précédent. On suppose pour le moment que les votants restent sur les mêmes secteurs.
 Elaborer de premières stratégies, en particulier:
 1. joueur **aléatoire**: choisit les secteurs où allouer ses militants au hasard
-2. joueur **stochastique expert**: choisit de manière probabiliste parmi $k$ stratégies identifiées comme pertinentes
+2. joueur **stochastique expert**: choisit de manière probabiliste parmi k stratégies identifiées comme pertinentes (vous pourrez ici utiliser certaines idées vues en TD)
 3. joueur **tétu**: joue toujours la même stratégie tout au long de la campagne
 4. joueur **meilleure réponse**: joue une meilleure réponse à la stratégie précédente de l'autre parti
-5. joueur **fictitious play**: joue en meilleure réponse pour l'utilité espérée selon la fréquence observée des stratégies observées de l'autre parti
+5. joueur **fictitious play**: joue en meilleure réponse pour l'utilité espérée selon la fréquence observée des stratégies de l'autre parti
 6. autres stratégies...
 
 ### semaine 3:
