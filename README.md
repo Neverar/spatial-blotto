@@ -75,18 +75,19 @@ Un fichier de prise en main `main.py` vous est fourni. Il illustre comment deux 
 ### semaine 1:
 Prise en main de l'environnement, permettre à **tous** les militants de choisir un électeur au hasard et de se déplacer vers celui-ci en utilisant A* (en suivant le modèle du premier joueur). Lorsque tous les militants ont atteint leur objectif, afficher le score de cette journée, c'est-à-dire le nombre de voix remportés par chaque parti.
 
-### semaine 2:
-Jeu sans budget de déplacement: le jeu se déroule à présent sur un nombre donné de jours de campagne. Le jour suivant de campagne, les joueurs partent de l'endroit où ils sont arrivés le jour précédent. On suppose pour le moment que les votants restent sur les mêmes secteurs.
+### semaine 2 et 3:
+Jeu **sans budget de déplacement**: le jeu se déroule à présent sur un nombre donné de jours de campagne. Le jour suivant de campagne, les joueurs partent de l'endroit où ils sont arrivés le jour précédent. On suppose pour le moment que les votants restent sur les mêmes secteurs.
 Elaborer de premières stratégies, en particulier:
-1. joueur **aléatoire**: choisit les secteurs où allouer ses militants au hasard
-2. joueur **stochastique expert**: choisit de manière probabiliste parmi k stratégies identifiées comme pertinentes (vous pourrez ici utiliser certaines idées vues en TD)
-3. joueur **tétu**: joue toujours la même stratégie tout au long de la campagne
-4. joueur **meilleure réponse**: joue une meilleure réponse à la stratégie précédente de l'autre parti
-5. joueur **fictitious play**: joue en meilleure réponse pour l'utilité espérée selon la fréquence observée des stratégies de l'autre parti
+1. **aléatoire**: choisit les électeurs où allouer ses militants au hasard
+2. **stochastique expert**: choisit de manière probabiliste parmi k stratégies identifiées comme pertinentes (vous pourrez ici utiliser certaines idées vues en TD)
+3. **tétu**: joue toujours la même stratégie tout au long de la campagne
+4. **meilleure réponse**: joue une meilleure réponse à la stratégie précédente de l'autre parti
+5. **fictitious play**: joue en meilleure réponse pour l'utilité espérée selon la fréquence observée des stratégies de l'autre parti (cette stratégie basée sur de l'apprentissage sera étudiée en semaine 3 de TD)
 6. autres stratégies...
 
-### semaine 3:
-Jeu avec budget de déplacement: on suppose à présent que les militants sont contraints par un budget de temps qui limite les secteurs qu'ils peuvent atteindre dans la journée. De plus, les votants sont réalloués au hasard dans de nouveaux secteurs chaque jour.
+### semaine 3
+
+Jeu **avec budget de déplacement**: on suppose à présent que les militants sont contraints par un budget de temps qui limite les électeurs qu'ils peuvent atteindre dans la journée. De plus, les électeurs sont réalloués au hasard dans de nouveaux secteurs chaque jour.
 Dans la première variante, on suppose que le budget est fixe pour chaque journée (par ex. 12 pas de déplacement pour chaque militant de chaque parti). Dans la seconde variante, on suppose que que le budget concerne la campagne entière: chaque jour le parti paye comme prix la somme des trajets réalisés par ses militants dans la journée.
 
 ### semaine 4:
