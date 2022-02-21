@@ -55,7 +55,7 @@ Les militants sont initialement situés au milieu de la carte.
 Les cartes utilisent au moins trois calques:
 
 * un calque `joueur`, où seront présents les personnages (ici les militants)
-* un calque `ramassable`, qui contient les objets que les personnages pourraient utiliser (ici les votants).
+* un calque `ramassable`, qui contient les "objets" que les personnages pourraient utiliser (ici les électrices et les électeurs).
 * un calque `obstacles`, pour les murs, qui sont infrnachissables par les personnages et contraignent les déplacements.
 
 Les joueurs, ramassables, et obstacles sont des objets Python sur lesquels vous pouvez effectuer des opérations classiques.
@@ -64,7 +64,7 @@ Par exemple, il est possible récupérer leurs coordonnées sur la carte avec `o
 
 Notez que vous pourrez ensuite éditer vos propres cartes à l'aide de l'éditeur [Tiled](https://www.mapeditor.org/), et exporter ces cartes au format `.json`. Vous pourrez alors modifier le nombre de secteurs ou de militants comme vous le souhaitez.
 
-**Note**: on fait ici l'hypothèse que toutes les informations (positions des joueurs) sont disponibles pour tous les agents.
+**Note**: on fait ici l'hypothèse que toutes les informations (positions de toutes les électrices et électeurs, et des autres militants) sont disponibles pour tous les partis.
 
 **Note**: les déplacements des militants ne sont pas contraints par les autres militants, ie. ils peuvent se superposer.
 
@@ -76,7 +76,7 @@ Un fichier de prise en main `main.py` vous est fourni. Il illustre comment deux 
 Prise en main de l'environnement, permettre à **tous** les militants de choisir un électeur au hasard et de se déplacer vers celui-ci en utilisant A* (en suivant le modèle du premier joueur). Lorsque tous les militants ont atteint leur objectif, afficher le score de cette journée, c'est-à-dire le nombre de voix remportés par chaque parti.
 
 ### semaine 2 et 3:
-Jeu **sans budget de déplacement**: le jeu se déroule à présent sur un nombre donné de jours de campagne. Le jour suivant de campagne, les joueurs partent de l'endroit où ils sont arrivés le jour précédent. On suppose pour le moment que les votants restent sur les mêmes secteurs.
+Jeu **sans budget de déplacement**: le jeu se déroule à présent sur un nombre donné de jours de campagne. Le jour suivant de campagne, les joueurs partent de l'endroit où ils sont arrivés le jour précédent. On suppose pour le moment que les électrices et électeurs restent chaque jour dans les mêmes secteurs.
 Elaborer de premières stratégies, en particulier:
 1. **aléatoire**: choisit les électeurs où allouer ses militants au hasard
 2. **tétu**: joue toujours la même stratégie tout au long de la campagne
@@ -89,10 +89,10 @@ Elaborer de premières stratégies, en particulier:
 
 Jeu **avec budget de déplacement**: on suppose à présent que les militants sont contraints par un budget de temps qui limite les électeurs qu'ils peuvent atteindre dans la journée. De plus, les électeurs sont réalloués au hasard dans de nouveaux secteurs chaque jour.
 * Dans la première variante, on suppose que le budget est fixe pour chaque journée (par ex. 12 pas de déplacement pour chaque militant de chaque parti).
-* Dans la seconde variante, on suppose que que le budget concerne la campagne entière: chaque jour le parti paye comme prix la somme des trajets réalisés par ses militants dans la journée.
+* Dans la seconde variante, on suppose que le budget concerne la campagne entière: chaque jour le parti paye comme prix la somme des trajets réalisés par ses militants dans la journée.
 
 ### semaine 4:
-**Soutenances**: vous décrirez les stratégies proposées et les résultats de tests en confrontation que vous aurez pu réaliser. Par exemple, stochastique expert contre fictitious play, etc.
+**Soutenances**: vous décrirez les stratégies proposées et les résultats de tests en confrontation que vous aurez pu réaliser. Par exemple, tétu contre aléatoire, stochastique expert contre fictitious play, etc.
 Votre rapport devra être rédigé en Markdown et déposé dans le répertoire `docs` (voir le template `rapport.md`)
 
 
