@@ -1,7 +1,7 @@
 # Rapport de projet
 
 ## Groupe
-* XXX
+* 2800282
 * YYY
 
 ## Description des choix importants d'implémentation
